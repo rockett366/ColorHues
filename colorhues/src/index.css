@@ -1,17 +1,55 @@
 /* color change switch */
 :root {
-  --MainBackgound: #942121;
-  --NavBar: #000000;
+  --MainBackgound: #fffdf7;
+  --NavBar: #dbdbdb;
   --NavBarBorder: #8d8d8d;
+  --Logo: #e07979;
+  --Box: #646466;
+  --BoxShadow: #a6d4da;
+  --TextShadow: #e07979;
+  color: rgb(48, 47, 47);
+  --altFont: #000000;
+  --InverseFont: #000000;
 }
 [data-theme="dark"] {
-  --MainBackgound: #535353;
-  --NavBar: #000000;
+  --MainBackgound: #2c2c2c;
+  --NavBar: #181818;
   --NavBarBorder: #8d8d8d;
+  --Logo: #e2b82d;
+  --Box: #339aca;
+  --BoxShadow: #d3d3d3;
+  --TextShadow: #078ac7;
+  color: white;
+  --altFont: #e2e2e2;
+  --InverseFont: #000000;
 }
-body {
-  margin: 0;
+[data-theme="pink"] {
+  --MainBackgound: #e288bd;
+  --NavBar: #f7e2f3;
+  --NavBarBorder: #290438;
+  --Logo: #800456;
+  --Box: #e7b2d7;
+  --BoxShadow: #f7e0f7;
+  --TextShadow: #800456;
+  color: #f7e0f7;
+  --altFont: #e2e2e2;
+  --InverseFont: #28074e;
 }
+[data-theme="natural"] {
+  --MainBackgound: #2e1d06;
+  --NavBar: #dfc4b3;
+  --NavBarBorder: #ffffff;
+  --Logo: #e7c89e;
+  --Box: #f0cb52;
+  --BoxShadow: #f7ecd5;
+  --TextShadow: #643a09;
+  color: #c9a085;
+  --altFont: #fff;
+  --InverseFont: #000000;
+}
+
+/* body */
+
 .home {
   background-color: var(--MainBackgound);
   min-height: 100vh;
@@ -19,6 +57,7 @@ body {
   padding: 0;
   display: flex;
 }
+/* left control panel */
 .leftControl {
   height: 100vh;
   width: 100px;
@@ -29,4 +68,62 @@ body {
   border-bottom: 0;
   border-color: var(--NavBarBorder);
   border-width: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leftControl button {
+  width: 40px;
+  margin: 3%;
+}
+
+/* right main home */
+.mainComponent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+.title {
+  width: 100%;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  text-shadow: 5px 5px var(--TextShadow), 10px 10px var(--BoxShadow);
+}
+.firstContainter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 2%;
+}
+.firstContainerWords {
+  max-width: 700px;
+}
+.logoContainer {
+  border-style: solid;
+  border-radius: 30px;
+  border-width: 10px;
+  padding: 2%;
+  border-color: var(--Box);
+  box-shadow: 7px 10px var(--BoxShadow);
+}
+.logo {
+  height: 100%;
+  width: 300px;
+  color: var(--Logo);
+}
+
+/* closer component */
+.closureComponent {
+  color: var(--InverseFont);
+  background-color: var(--BoxShadow);
+  width: 100%;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+  border-color: var(--NavBarBorder);
 }
